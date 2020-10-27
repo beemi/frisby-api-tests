@@ -2,7 +2,7 @@
 
 # Run you rest
 
-```yarn test```
+```yarn test:prod```
 
 ##Contact
 [beemi.raja@gmail.com](beemi.raja@gmail.com)

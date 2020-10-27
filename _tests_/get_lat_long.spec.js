@@ -1,8 +1,9 @@
 'use strict';
 
 const frisby = require('frisby');
+const config = require('config');
 
-const postcodeHost = 'http://api.postcodes.io/postcodes';
+const postcodeHost = config.get('Postcode.host');
 
 describe('Postcode api test', function () {
 
@@ -10,7 +11,7 @@ describe('Postcode api test', function () {
     it('should check status code 200', function (doneFn) {
 
         return frisby
-            .get(postcodeHost + '/RM17 6EY')
+            .get(postcodeHost + '/postcodes/RM17 6EY')
             .inspectRequest() // Request print for debugging
             .inspectJSON()  // Pretty print JSON
             .expect('status', 200)
@@ -19,7 +20,7 @@ describe('Postcode api test', function () {
 
     it('should check lat long values', function (doneFn) {
 
-        frisby.get(postcodeHost + '/RM17 6EY')
+        frisby.get(postcodeHost + '/postcodes/RM17 6EY')
             .expect('status', 200)
             .then(function (response) {
                 let json = response.json;
@@ -32,7 +33,7 @@ describe('Postcode api test', function () {
 
     it('should NOT error with missing key', function (doneFn) {
 
-        frisby.get(postcodeHost + '/RM17 6EY')
+        frisby.get(postcodeHost + '/postcodes/RM17 6EY')
             .expect('status', 200)
             .expect('json', {
                 status: 200,

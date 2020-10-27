@@ -8,7 +8,9 @@
     "url": "http://github.com/vlucas/frisby"
   },
   "scripts": {
-    "test": "jest"
+    "test:dev": "export NODE_ENV=development && jest",
+    "test:stage": "export NODE_ENV=staging && jest",
+    "test:prod": "export NODE_ENV=production && jest"
   },
   "keywords": [
     "testing",
@@ -36,5 +38,8 @@
       "/node_modules/"
     ],
     "verbose": false
+  },
+  "dependencies": {
+    "config": "^3.3.2"
   }
 }

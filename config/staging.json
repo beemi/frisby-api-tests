@@ -1,0 +1,5 @@
+{
+  "Postcode": {
+    "host": "http://api.postcodes.io-stage"
+  }
+}
