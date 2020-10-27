@@ -8,6 +8,6 @@
 
 ![alt text](docs/jest-html-report.png)
 
-##Contact
+## Contact
 
 [beemi.raja@gmail.com](beemi.raja@gmail.com)
