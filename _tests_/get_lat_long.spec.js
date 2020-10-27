@@ -5,7 +5,7 @@ const config = require('config');
 
 const postcodeHost = config.get('Postcode.host');
 
-describe('Postcode api test', function () {
+describe.skip('Postcode api test', function () {
 
 
     test('should check status code 200', function (doneFn) {
