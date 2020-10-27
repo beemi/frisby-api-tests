@@ -8,7 +8,7 @@ const postcodeHost = config.get('Postcode.host');
 describe('Postcode api test', function () {
 
 
-    it('should check status code 200', function (doneFn) {
+    test('should check status code 200', function (doneFn) {
 
         return frisby
             .get(postcodeHost + '/postcodes/RM17 6EY')
@@ -18,7 +18,7 @@ describe('Postcode api test', function () {
             .done(doneFn)
     });
 
-    it('should check lat long values', function (doneFn) {
+    test('should check lat long values', function (doneFn) {
 
         frisby.get(postcodeHost + '/postcodes/RM17 6EY')
             .expect('status', 200)
@@ -31,17 +31,25 @@ describe('Postcode api test', function () {
             .done(doneFn);
     });
 
-    it('should NOT error with missing key', function (doneFn) {
+    test('should NOT error with missing key', function (doneFn) {
 
         frisby.get(postcodeHost + '/postcodes/RM17 6EY')
             .expect('status', 200)
             .expect('json', {
                 status: 200,
                 result: {
-                    postcode: "RM17 6EY"
+                    postcode: "RM17 EY"
                 }
             })
             .done(doneFn);
+    });
+
+    test.skip('should throw pending test error', function (doneFn) {
+
+    });
+
+    test.skip('should throw todo test error', function (doneFn) {
+
     });
 
 });
